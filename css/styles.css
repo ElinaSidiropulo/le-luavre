@@ -1,0 +1,335 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #005792;
+  font-family: 'Oxygen', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header-nav {
+  background-color: #FFC0CB;
+  border-radius: 0;
+  border: 0;
+}
+
+#logo-img {
+  background: url('../images/restaurant-logo_large.png') no-repeat;
+  width: 146px;
+  height: 146px;
+  margin: 10px 15px 10px 0;
+}
+
+.navbar-brand, .navbar-brand a {
+  padding-top: 25px;
+  color: #005792;
+}
+.navbar-brand span {
+  color: #005792;
+}
+.navbar-brand h1 {
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand p {
+  font-family: 'Lora', serif;
+  color: palevioletred;
+  margin-top: 0;
+}
+
+.navbar-brand p span {
+  vertical-align: middle;
+  color: #900048;
+}
+
+#nav-list {
+  margin-top: 0;
+}
+
+#nav-list a {
+  color:#951C49;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+#phone {
+  margin-top: 0;
+}
+
+#phone a {
+  text-align: right;
+  padding-bottom: 0;
+  color: #005792;
+}
+
+#phone div {
+  color: #900048;
+  text-align: right;
+  padding-right: 15px;
+}
+
+#nav-list, #nav-list a {
+    color: #005792;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #005792;
+}
+
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: 0;
+}
+
+/*start footer*/
+.panel-footer {
+  font-family: 'Lora', serif;
+  margin-top: 0;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #FFC0CB;
+  border-top: 0;
+  color: #005792;
+}
+
+hr.visible-xs {
+  border-color: #FFA500;
+}
+
+.panel-footer div.row {
+  margin-bottom: 0;
+}
+#hours, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: palevioletred;
+  font-size: .8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 0;
+}
+/*end footer*/
+
+.jumbotron {
+  background: url("videos/jumbotron_video_768.mp4") no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  align-items: center; /* Центрирование по вертикали */
+}
+
+
+
+#menu-tile, #specials-tile, #map-tile {
+  height: 250px;
+  width: 100%;
+  position: relative;
+  border: 5px solid #FFA500;
+  overflow: hidden;
+  font-family: 'Lora', serif;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-tile {
+  background: url('../images/menu-tile.jpg') no-repeat;
+  background-size: cover;
+}
+#specials-tile {
+  background: url('../images/specials-tile.jpg') no-repeat;
+  background-size: cover;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  background-color: #005792;
+  color: #FFFF00;
+  opacity: .7;
+}
+
+/*end homepage*/
+
+.category-tile { 
+  position: relative;
+  border: 5px solid #FFA500;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 15px;
+}
+.category-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #005792;
+  color: #FFFF00;
+  opacity: .7;
+  font-family: 'Lora', serif;
+}
+.category-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+@media (min-width: 1200px) {
+  .jumbotron {
+    background: url('../videos/jumbotron_video_1200.mp4') no-repeat;
+    height: 500px;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    align-items: center; /* Центрирование по вертикали */
+
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  #logo-img {
+  background: url('../images/restaurant-logo_medium.png') no-repeat;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  }
+
+  .jumbotron {
+    background: url('../videos/jumbotron_video_992.mp4') no-repeat;
+    height: 500px;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    align-items: center; /* Центрирование по вертикали */
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .jumbotron {
+    background: url('../videos/jumbotron_video_992.mp4') no-repeat;
+    height: 432px;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    align-items: center; /* Центрирование по вертикали */
+  }
+}
+
+@media (max-width: 767px) {
+  .jumbotron {
+    background: url('../videos/jumbotron_video_768.mp4') no-repeat;
+    height: 300px;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    align-items: center; /* Центрирование по вертикали */
+  }
+
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 {
+    padding-top: 10px;
+    font-size: 5vw;
+  }
+  .navbar-brand p {
+    margin-top: 0;
+  }
+  .navbar-brand p img {
+    height: 20px;
+  }
+
+  #collapsable-nav a {
+    font-size: 1.2em;
+  }
+
+  #collapsable-nav a span{
+    font-size: 1em;
+    margin-right: 0;
+  }
+
+  #call-btn > a {
+    font-size: 1.5em;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    background-color: #FFC0CB;
+    color: #005792;
+  }
+  #xs-deliver {
+    margin-top: 0;
+    font-size: .7em;
+    letter-spacing: .1em;
+  }
+
+  /* Footer */
+  .panel-footer section {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .panel-footer section:nth-child(3) {
+    margin-bottom: 0; /* margin already exists on the whole row */
+  }
+  .panel-footer section hr {
+    width: 50%;
+  }
+  /* End Footer */
+
+  .container .jumbotron {
+    margin-top: 0;
+    padding: 0;
+  }
+
+}
+
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  /* End Header */
+
+  /* Home page */
+  #menu-tile, #specials-tile {
+    width: 280px;
+    margin: 0 auto 15px;
+  }
+}
