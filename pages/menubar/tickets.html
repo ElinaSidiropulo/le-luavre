@@ -70,7 +70,7 @@
 
     <!-- Total Price -->
     <div class="ticket-section total-price">
-        <h3>Total Price: <span id="total-price">22</span>€</h3>
+        <h3>Total Price: <span id="total-price"></span></h3>
     </div>
 
     <!-- Purchase Button -->
@@ -125,6 +125,28 @@
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0]; // Преобразуем в формат YYYY-MM-DD
     dateInput.min = formattedDate;
+
+    document.getElementById('ticket-type').addEventListener('change', function() {
+        const ticketType = this.value;
+        const price = {
+            adult: 22,
+            student: 17,
+            senior: 10,
+            child: 20
+        }[ticketType];
+
+        // Преобразуем значение quantity из строки в число
+        const quantity = Number(document.getElementById('ticket-quantity').value) || 0;
+        const totalPrice = price * quantity;
+
+        document.getElementById('total-price').innerText = totalPrice + "€";
+
+        // Сохраняем информацию в localStorage
+        localStorage.setItem('ticketType', ticketType);
+        localStorage.setItem('totalPrice', totalPrice.toString());
+        console.log(totalPrice)// Преобразуем totalPrice в строку
+    });
 </script>
+
 </body>
 </html>

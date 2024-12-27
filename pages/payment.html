@@ -7,6 +7,7 @@
     <title>Payment</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/ticket.css">
+    <link rel="" href="">
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <style>
         /* Эстетичный стиль */
@@ -78,36 +79,33 @@
         #expiry-date {
             max-width: 97%;
             background-color: #fff;
+            color: gray;
         }
 
         #visit-date {
             background-color: #fff;
+            color: gray;
             max-width: 97%;
         }
     </style>
 </head>
 <body>
 <header class="header">
-    <!-- Текст "основан в XXXX году" -->
     <div class="since">Founded in 1793</div>
 
-    <!-- Название "Louvre" по центру -->
     <div class="logo">
         <a href="../index.html"><h1>Louvre</h1></a>
     </div>
-
-    <!-- Контактный номер телефона -->
 
     <a href="tel:33 1 40 20 50 50">
         <div class="contact">+33 1 40 20 50 50</div>
     </a>
 </header>
 
-<!-- Меню навигации -->
 <nav class="menu">
-    <a href="exhibitions.html">Exhibitions</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="tickets-info.html">Buy Tickets</a>
+    <a href="../pages/menubar/exhibitions.html">Exhibitions</a>
+    <a href="../pages/menubar/schedule.html">Schedule</a>
+    <a href="../pages/menubar/tickets-info.html">Buy Tickets</a>
 
 </nav>
 
@@ -141,78 +139,6 @@
     <p>&copy; Louvre Museum 2024</p>
 </footer>
 
-<!-- JavaScript -->
-<script>
-    // Получение элементов
-    const form = document.getElementById('payment-form');
-    const visitDate = document.getElementById('visit-date');
-    const dateError = document.getElementById('date-error');
-    const expiryDate = document.getElementById('expiry-date');
-
-    // Установка минимальной даты (сегодня)
-    const today = new Date().toISOString().split('T')[0];
-    visitDate.min = today;
-
-    // Обработка отправки формы
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Отключаем стандартное поведение
-
-        const cardNumber = document.getElementById('card-number').value.replace(/\s+/g, '');
-        const cvv = document.getElementById('cvv').value;
-        const selectedDate = new Date(visitDate.value);
-        const now = new Date();
-        const cardHolder = document.getElementById('card-name').value;
-        const expiry = new Date(expiryDate.value);
-
-
-        // Проверка номера карты (16 цифр)
-        if (!/^\d{16}$/.test(cardNumber)) {
-            alert('Please enter a valid 16-digit card number.');
-            return;
-        }
-
-        // Проверка CVV (3 цифры)
-        if (!/^\d{3}$/.test(cvv)) {
-            alert('Please enter a valid 3-digit CVV.');
-            return;
-        }
-
-        if (expiry < now) {
-            alert('Your card has expired. Please use a valid card.');
-            return;
-        }
-
-        // Проверка даты посещения
-        if (selectedDate < now) {
-            dateError.style.display = 'block';
-            return;
-        } else {
-            dateError.style.display = 'none';
-        }
-
-        // Сохранение данных покупки в JSON
-        const ticketData = {
-            cardHolder: document.getElementById('card-name').value,
-            cardNumber: cardNumber.replace(/\d{12}(\d{4})/, '************$1'),
-            visitDate: visitDate.value,
-            ticketType: "Adult Ticket", // Здесь можно добавить выбор типа
-            price: "22€" // Также изменить на динамический
-        };
-
-        // Сохранение в localStorage
-        localStorage.setItem('ticketData', JSON.stringify(ticketData));
-        localStorage.setItem('cardName', document.getElementById('card-name').value);
-        localStorage.setItem('cardNumber', cardNumber.replace(/\d{12}(\d{4})/, '************$1'));
-        localStorage.setItem('ticketType', "Adult Ticket"); // Здесь можно сделать выбор типа билета динамическим
-        localStorage.setItem('price', "22€"); // Также изменить на динамический
-        localStorage.setItem('visitDate', visitDate.value);
-
-
-        // Перенаправление на страницу чека
-        window.location.href = 'receipt.html';
-
-
-    });
-</script>
+<script src="../js/payment.js"></script>
 </body>
 </html>

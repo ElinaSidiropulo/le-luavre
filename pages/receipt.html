@@ -86,7 +86,7 @@
         <p><strong>Cardholder Name:</strong> <span id="card-name"></span></p>
         <p><strong>Card Number:</strong> <span id="card-number"></span></p>
         <p><strong>Ticket Type:</strong> <span id="ticket-type"></span></p>
-        <p><strong>Price:</strong> <span id="price"></span></p>
+        <p><strong>Price:</strong> <span id="price"></span>€</p>
         <p><strong>Visit Date:</strong> <span id="visit-date"></span></p>
     </div>
     <p class="thank-you">Thank you for your purchase! Enjoy your visit.</p>
@@ -97,14 +97,14 @@
 </footer>
 
 <script>
-    // Получение данных из localStorage
+    // Получаем данные из localStorage
     const cardName = localStorage.getItem('cardName');
     const cardNumber = localStorage.getItem('cardNumber');
     const ticketType = localStorage.getItem('ticketType');
     const price = localStorage.getItem('price');
     const visitDate = localStorage.getItem('visitDate');
 
-    // Отображение данных на странице
+    // Отображаем данные на странице
     document.getElementById('card-name').textContent = cardName || 'N/A';
     document.getElementById('card-number').textContent = cardNumber || 'N/A';
     document.getElementById('ticket-type').textContent = ticketType || 'N/A';
