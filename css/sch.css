@@ -1,0 +1,16 @@
+.article-container {
+    display: flex;
+    align-items: stretch; /* Растягивает элементы до одной высоты */
+}
+
+.article-container img {
+    object-fit: cover;
+    height: 100%; /* Устанавливает высоту для адаптации к контейнеру */
+}
+
+.article-container .list-group {
+    flex: 1; /* Растягивает блок списка на всю высоту родителя */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Равномерное распределение содержимого */
+}

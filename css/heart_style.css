@@ -1,0 +1,152 @@
+#nav-list a span {
+    font-size: 1.8em;
+}
+
+#nav-list, #nav-list a {
+    color: #005792;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+}
+
+.navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: 0;
+}
+
+/*start footer*/
+.panel-footer {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 30px;
+    background-color: #FFC0CB;
+    border-top: 0;
+    color: #005792;
+}
+
+#testimonials {
+    font-style: italic;
+}
+#testimonials p:nth-child(2) {
+    margin-top: 0;
+}
+/*end footer*/
+
+.category-tile {
+    position: relative;
+    border: 5px solid #FFA500;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+}
+.category-tile span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #005792;
+    color: #FFFF00;
+    opacity: .9;
+    font-family: 'Lora', serif;
+}
+.category-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background: white;
+    padding: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+article img {
+    flex-shrink: 0; /* Чтобы картинка не сжималась */
+}
+
+article a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+article div {
+    padding: 20px;
+}
+
+article a:hover,
+article a:focus {
+    color: black; /* Сохраняет цвет при наведении или фокусе */
+    text-decoration: none; /* Убирает подчеркивание при наведении или фокусе */
+}
+
+article div {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+.article {
+    max-width: 100%;
+    width: 100%; /* Делает блоки адаптивными */
+    box-sizing: border-box;
+}
+
+.rounded .h-full {
+    padding: 0;
+
+}
+
+.justify-center .rounded img {
+    padding: 20px;
+    max-width: 50%;
+    height: auto; /* Сохраняет пропорции изображения */
+    display: block; /* Убирает пробелы снизу */
+    margin: 0 auto; /* Центрирует изображение */
+}
+
+.justify-center {
+    max-width: 1200px; /* Устанавливает максимальную ширину секции */
+    width: 100%; /* Устанавливает адаптивную ширину */
+    margin: 0 auto; /* Центрирует секцию */
+}
+
+article h3 {
+    color: #aaa;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+article p, article small {
+    color: #fff; /* Унаследовать цвет текста родителя */
+}
+
+.rounded.h-full.lg\:h-48.my-8 {
+    background-color: #26262a; /* Применение серого цвета */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    article p {
+        font-size: 20px; /* Унаследовать цвет текста родителя */
+    }
+    article h3 {
+        font-size: 25px; /* Унаследовать цвет текста родителя */
+    }
+}
+
+@media (min-width: 991px) {
+    article p {
+        font-size: 25px; /* Унаследовать цвет текста родителя */
+    }
+    article h3 {
+        font-size: 30px;
+    }
+}

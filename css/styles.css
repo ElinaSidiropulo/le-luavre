@@ -1,10 +1,59 @@
 body {
-  font-size: 16px;
-  color: #fff;
-  background-color: #005792;
-  font-family: 'Oxygen', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #000; /* Черный фон */
+  color: #fff; /* Белый текст */
+}
+
+.header {
+  background-color: #000; /* Темно-серый фон шапки */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  text-align: center;
+  flex: 1;
+}
+
+
+.header .logo h1 {
+  /*font-size: 2.5em;*/
+  margin: 0;
+  color: #fff; /* Белый текст */
+}
+
+.header .since {
+  font-size: 14px;
+  color: #aaa; /* Светло-серый текст */
+}
+
+.header .contact {
+  font-size: 14px;
+  color: #aaa; /* Светло-серый текст */
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff; /* Белый текст *
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background-color: #555; /* Серый фон при наведении */
+  border-radius: 5px;
 }
 
 #header-nav {
@@ -13,15 +62,46 @@ body {
   border: 0;
 }
 
-#logo-img {
-  background: url('../images/restaurant-logo_large.png') no-repeat;
-  width: 146px;
-  height: 146px;
-  margin: 10px 15px 10px 0;
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.left-text {
+  font-size: 1em;
+  color: palevioletred;
 }
 
+/* Логотип и название "Louvre" по центру */
+.center-text {
+  flex: 1;
+  text-align: center;
+}
+
+/* Номер телефона справа */
+.right-text {
+  text-align: right;
+}
+
+/* Центрируем кнопки меню */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-center li {
+  margin: 0 15px;
+}
+
+.navbar-center a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
 .navbar-brand, .navbar-brand a {
-  padding-top: 25px;
+  padding-top: 0;
   color: #005792;
 }
 .navbar-brand span {
@@ -89,7 +169,6 @@ body {
 }
 
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #005792;
 }
 
 .navbar-header button.navbar-toggle {
@@ -101,7 +180,7 @@ body {
 .panel-footer {
   font-family: 'Lora', serif;
   margin-top: 0;
-  padding-top: 35px;
+  padding-top: 0;
   padding-bottom: 30px;
   background-color: #FFC0CB;
   border-top: 0;
@@ -138,9 +217,10 @@ hr.visible-xs {
   background: url("videos/jumbotron_video_768.mp4") no-repeat center center;
   background-size: cover;
   margin: 0;
-  padding: 0;
   width: 100vw;
   align-items: center; /* Центрирование по вертикали */
+  padding-top: 0;
+  margin-top: 0;
 }
 
 
@@ -149,7 +229,6 @@ hr.visible-xs {
   height: 250px;
   width: 100%;
   position: relative;
-  border: 5px solid #FFA500;
   overflow: hidden;
   font-family: 'Lora', serif;
 }
@@ -158,51 +237,44 @@ hr.visible-xs {
 }
 
 #menu-tile {
-  background: url('../images/menu-tile.jpg') no-repeat;
+  background: url('../images/heart-tile.jpg') no-repeat;
   background-size: cover;
+  padding: 20px;
 }
 #specials-tile {
-  background: url('../images/specials-tile.jpg') no-repeat;
+  background: url('../images/history-tile.jpg') no-repeat;
   background-size: cover;
 }
 
 #menu-tile span, #specials-tile span, #map-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6em;
-  background-color: #005792;
-  color: #FFFF00;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  right: 30px;
+  width: 50%;
+  text-align: left;
+  font-size: 25px;
+  color: #fff;
+  background-color: #000;
   opacity: .7;
+}
+
+#menu-tile span {
+  position: absolute;
+  margin-right: 40px;
+  bottom: 50px;
+  text-align: center;
+  width: 60%;
+}
+#map-tile span, #specials-tile span {
+  position: absolute;
+  margin-right: 60px;
+  bottom: 95px;
+  text-align: center;
 }
 
 /*end homepage*/
-
-.category-tile { 
-  position: relative;
-  border: 5px solid #FFA500;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 15px;
-}
-.category-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  background-color: #005792;
-  color: #FFFF00;
-  opacity: .7;
-  font-family: 'Lora', serif;
-}
-.category-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
-}
 
 @media (min-width: 1200px) {
   .jumbotron {
@@ -219,12 +291,6 @@ hr.visible-xs {
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
-  #logo-img {
-  background: url('../images/restaurant-logo_medium.png') no-repeat;
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  }
 
   .jumbotron {
     background: url('../videos/jumbotron_video_992.mp4') no-repeat;
@@ -248,6 +314,21 @@ hr.visible-xs {
     width: 100vw;
     align-items: center; /* Центрирование по вертикали */
   }
+
+  #map-tile span {
+    position: absolute;
+    margin-right: 340px;
+    bottom: 95px;
+    text-align: center;
+    align-items: center;
+    width: 20%;
+    flex: 1;
+    justify-content: center;
+  }
+
+  #menu-tile span {
+    bottom: 85px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -261,9 +342,29 @@ hr.visible-xs {
     align-items: center; /* Центрирование по вертикали */
   }
 
+  #map-tile span, #menu-tile span, #specials-tile span{
+    text-align: center;
+    width: 30%;
+  }
+
+  .navbar-brand .center-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .navbar-brand .right-text {
+    flex: 0 0 auto;
+    text-align: right;
+  }
   .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar-brand .left-text {
+    flex: 0 0 auto;
+    text-align: left;
   }
   .navbar-brand h1 {
     padding-top: 10px;
@@ -299,37 +400,164 @@ hr.visible-xs {
     letter-spacing: .1em;
   }
 
-  /* Footer */
-  .panel-footer section {
-    margin-bottom: 0;
-    text-align: center;
-  }
-  .panel-footer section:nth-child(3) {
-    margin-bottom: 0; /* margin already exists on the whole row */
-  }
-  .panel-footer section hr {
-    width: 50%;
-  }
-  /* End Footer */
 
-  .container .jumbotron {
-    margin-top: 0;
-    padding: 0;
-  }
 
 }
 
 @media (max-width: 479px) {
   /* Header */
   .navbar-brand h1 { /* Restaurant name */
-    padding-top: 5px;
+    padding-top: 0;
     font-size: 6vw;
   }
   /* End Header */
 
   /* Home page */
-  #menu-tile, #specials-tile {
-    width: 280px;
-    margin: 0 auto 15px;
-  }
+  /*#menu-tile, #specials-tile {*/
+  /*  width: 280px;*/
+  /*}*/
+
+
+}
+
+/* Footer */
+/* Общие стили футера */
+.panel-footer {
+  font-family: 'Lora', serif;
+  padding: 40px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Заголовок для социальных сетей */
+.panel-footer h4 {
+  font-size: 1.3em;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+  color: #aaa;
+}
+
+/* Социальные иконки */
+.panel-footer .social-icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.panel-footer .social-icons a {
+  color: #fff;
+  font-size: 1.8em;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.panel-footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #aaa;
+}
+
+/* Цитата */
+#quote blockquote {
+  font-style: italic;
+  font-size: 1.4em;
+  color: #fff;
+  padding-left: 0;
+  border-left: none;
+}
+
+#quote blockquote footer {
+  font-size: 1.1em;
+  font-style: normal;
+  color: #aaa;
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* Линия-разделитель */
+.footer-line {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, #333, #666, #333);
+  margin: 20px 0;
+}
+
+/* Копирайт */
+.footer-copyright {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.container .jumbotron {
+  margin-top: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Lora', serif;
+}
+
+
+/* Styles for the Schedule Page */
+.list-group {
+  margin-top: 20px;
+  font-family: 'Lora', serif;
+  font-size: 1.2em;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.list-group-item {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.img-fluid {
+  border: 5px solid #333;
+}
+
+.small-img {
+  width: 70%; /* Уменьшает ширину изображения до 40% родительского контейнера */
+  float: left; /* Размещает изображение слева */
+  margin-right: 20px; /* Добавляет отступ справа для разделения с текстом */
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 400px; /* Высота равных прямоугольников */
+  margin-top: 20px;
+}
+
+/* Картинка */
+.schedule-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Подгоняет изображение */
+  border-radius: 8px; /* Скругление углов, по желанию */
+}
+
+/* Список расписания */
+.schedule-list {
+  width: 50%; /* Половина ширины для десктопа */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
 }

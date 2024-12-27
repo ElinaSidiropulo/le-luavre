@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>la luvre</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/epochs/anc.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="since">Founded in 1793</div>
+    <div class="logo">
+        <a href="../../index.html"><h1>Louvre</h1></a>
+    </div>
+    <a href="tel:33 1 40 20 50 50"><div class="contact">+33 1 40 20 50 50</div></a>
+</header>
+
+<nav class="menu">
+    <a href="../../pages/menubar/exhibitions.html">Exhibitions</a>
+    <a href="../../pages/menubar/schedule.html">Schedule</a>
+    <a href="../../pages/menubar/tickets-info.html">Buy Tickets</a>
+</nav>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="../../images/med_time/med1.jpg" alt="Ancient Art 1">
+        <span>Battaglia</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med2.jpg" alt="Ancient Art 2">
+        <span>Lady Day</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med3.jpg" alt="Ancient Art 3">
+        <span>La Belle Dame sans Merci</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med4.jpg" alt="Ancient Art 4">
+        <span>Worship of the Magi</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med5.jpg" alt="Ancient Art 5">
+        <span>Queen Jadwiga</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med6.jpg" alt="Ancient Art 6">
+        <span>Gospel story</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med7.jpg" alt="Ancient Art 6">
+        <span>The Battle of Shrovetide and Lent</span>
+    </div>
+    <div class="gallery-item">
+        <img src="../../images/med_time/med8.jpg" alt="Ancient Art 6">
+        <span>Wanda</span>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal" id="modal">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="">
+</div>
+
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <section id="social-media" class="col-md-6 text-start">
+                <h4>Follow us on:</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </section>
+            <section id="quote" class="col-md-6 text-end">
+                <blockquote>
+                    <p>"Art is not what you see, but what you make others see."</p>
+                    <footer>Edgar Degas</footer>
+                </blockquote>
+            </section>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <hr class="footer-line">
+                <p class="footer-copyright">&copy; Louvre Museum 2024</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalClose = document.getElementById('modal-close');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = item.src;
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>

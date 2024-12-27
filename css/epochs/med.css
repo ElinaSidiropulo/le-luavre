@@ -1,0 +1,35 @@
+.category-tile {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+.category-tile div{
+    padding: 0;
+}
+.category-tile span {
+    position: absolute;
+    bottom: 40%;
+    right: 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #000;
+    color: #fff;
+    opacity: .7;
+    font-family: 'Lora', serif;
+}
+.category-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+.category-tile span{
+
+}
+
+.category-tile img {
+    width: 100%; /* Устанавливаем ширину равной ширине контейнера */
+    height: 100%; /* Устанавливаем высоту равной высоте контейнера */
+    object-fit: cover; /* Сохраняем пропорции, обрезая лишнее */
+    display: block; /* Убираем лишние отступы */
+}

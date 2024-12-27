@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Стили для страницы чека */
+        body {
+            font-family: 'Lora', serif;
+            background-color: #26262a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: beige;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .receipt-details {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .receipt-details p {
+            margin: 10px 0;
+        }
+
+        .thank-you {
+            text-align: center;
+            font-size: 1.4em;
+            color: #005792;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: #005792;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background-color: #004075;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <!-- Текст "основан в XXXX году" -->
+    <div class="since">Founded in 1793</div>
+
+    <!-- Название "Louvre" по центру -->
+    <div class="logo">
+        <a href="../index.html"><h1>Louvre</h1></a>
+    </div>
+
+    <!-- Контактный номер телефона -->
+
+    <a href="tel:33 1 40 20 50 50">
+        <div class="contact">+33 1 40 20 50 50</div>
+    </a>
+</header>
+
+<div class="container">
+    <h1>Purchase Receipt</h1>
+    <div class="receipt-details">
+        <p><strong>Cardholder Name:</strong> <span id="card-name"></span></p>
+        <p><strong>Card Number:</strong> <span id="card-number"></span></p>
+        <p><strong>Ticket Type:</strong> <span id="ticket-type"></span></p>
+        <p><strong>Price:</strong> <span id="price"></span></p>
+        <p><strong>Visit Date:</strong> <span id="visit-date"></span></p>
+    </div>
+    <p class="thank-you">Thank you for your purchase! Enjoy your visit.</p>
+</div>
+
+<footer class="panel-footer">
+    <p>&copy; Louvre Museum 2024</p>
+</footer>
+
+<script>
+    // Получение данных из localStorage
+    const cardName = localStorage.getItem('cardName');
+    const cardNumber = localStorage.getItem('cardNumber');
+    const ticketType = localStorage.getItem('ticketType');
+    const price = localStorage.getItem('price');
+    const visitDate = localStorage.getItem('visitDate');
+
+    // Отображение данных на странице
+    document.getElementById('card-name').textContent = cardName || 'N/A';
+    document.getElementById('card-number').textContent = cardNumber || 'N/A';
+    document.getElementById('ticket-type').textContent = ticketType || 'N/A';
+    document.getElementById('price').textContent = price || 'N/A';
+    document.getElementById('visit-date').textContent = visitDate || 'N/A';
+</script>
+</body>
+</html>
